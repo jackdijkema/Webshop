@@ -1,0 +1,63 @@
+form {
+  border: 3px solid #f1f1f1;
+}
+.PopUp {
+    
+   
+    height: 80vh;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    height: 80vh;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: rgba(0,0,0,0.6);
+    text-align: center;
+}
+
+
+.PopUp-content {
+    background: white;
+    height: 250px;
+    width: 500px;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+}
+
+.btnLogin  {
+    padding: 9px 25px;
+    background-color: rgba(0,136,169,1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.btnLogin:hover {
+    background-color: rgba(0,136,169,0.8);
+}
+
+input {
+    margin: 20px auto;
+    width: 50%;
+    display: block;
+    padding: 8px;
+    border: 1px solid gray;
+}
+
+.logo_login {
+    color: black;
+}
+
+.close_login {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -14px;
+    right: -14px;
+    cursor: pointer; 
+}
