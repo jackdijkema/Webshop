@@ -7,10 +7,9 @@ class Databases {
 	var $pass = "";
 	var $db   = "Database";
 	
-	var $tbname = klantgegevens;
 
 	public $con;
-		
+// Making database connecting and if not connected echo an error message.		
 	public function connect()
 	{
 		$this->con - mysqli_connect($this->host,$this->user,$this->pass,$this->db);
@@ -21,6 +20,5 @@ class Databases {
 		}
 		return $corn;
 	}
-	
 }
 ?>

@@ -1,3 +1,12 @@
+<?php
+require (validator.class.php);
+
+if (isset($_POST['submit']));
+	{
+echo "Form submitted";		
+	}
+?>
+
 <!doctype html>
 
 <html lang="en">
@@ -45,8 +54,8 @@
                             <div class="logo_login">
                                 <h1>Keyboard Shop</h1>
                             </div>
-                                <input type="text" placeholder="Username">    
-                                <input type="password" placeholder="Password">
+                                <input type="text" name="username"placeholder="Username">    
+                                <input type="password" name="password" placeholder="Password">
                             <a href="#" class="btnLogin">Login</a>
                             <a href="Registreer.html" class="btnLogin">Registreer</a>
                         </form>
