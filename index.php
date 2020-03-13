@@ -1,5 +1,4 @@
 <?php
-require (validator.class.php);
 
 if (isset($_POST['submit']));
 	{

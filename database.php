@@ -2,23 +2,26 @@
 //Database
 class Databases {
 
-	var $host = "localhost";
-	var $user = "root";
-	var $pass = "";
-	var $db   = "Database";
+	private $host;
+	private $user;
+	private $pass;
+	private $db;
 	
-
-	public $con;
-// Making database connecting and if not connected echo an error message.		
-	public function connect()
-	{
-		$this->con - mysqli_connect($this->host,$this->user,$this->pass,$this->db);
+// Making connection to database.
+	protected function conjnect() {
+		$this->host = "localhost"; 
+		$this->user = "root";
+		$this->pass = "";
+		$this->db   = "database";
 		
-		if (!$this->con)
-		{
-			echo 'Database Connection error'. msqli_connect_error($this->con);
-		}
-		return $corn;
+	 	$conn = new mysqli($this->host,$this->user,$this->pass,$this->db);
+		return $conn;
 	}
-}
+
+
+
+
+
+
+
 ?>
