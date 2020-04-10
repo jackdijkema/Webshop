@@ -1,11 +1,3 @@
-<?php
-
-if (isset($_POST['submit']));
-	{
-echo "Form submitted";		
-	}
-?>
-
 <!doctype html>
 
 <html lang="en">
@@ -27,7 +19,7 @@ echo "Form submitted";
         <h1 class="logo">Keyboard Shop</h1>
         <nav>
             <ul class="nav_links">
-                <li><a href="index.html" class="ActivePage">Home</a></li>
+                <li><a href="index.php" class="ActivePage">Home</a></li>
                 <li><a href="Producten.html">Producten</a></li>
                 <li><a href="Contact.hml">Contact</a></li>
             </ul>
