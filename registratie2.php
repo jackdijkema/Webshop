@@ -8,6 +8,7 @@ require_once 'database.php';
 		$password = $_POST['password'];
 		$pnumber  = $_POST['tel'];
 
+
 		// Making INSERT query.
 
 	$query = "INSERT INTO klantgegevens (naam,email,wachtwoord,telefoonnummer)VALUES ( '".$username."' ,'".$email."', '".$password."', ".$pnumber.")";

@@ -1,3 +1,20 @@
+<?php
+
+session_start();
+
+if ($_SESSION['loggedOn'] == true)
+{
+	echo $_SESSION['loginAccepted'] ,'', $_SESSION['naam'];
+} 
+else 
+{
+	echo $_SESSION['loginError'];
+	session_destroy();
+} 
+
+
+
+?>
 <!doctype html>
 
 <html lang="en">
@@ -21,7 +38,7 @@
             <ul class="nav_links">
                 <li><a href="index.php" class="ActivePage">Home</a></li>
                 <li><a href="Producten.html">Producten</a></li>
-                <li><a href="Contact.hml">Contact</a></li>
+                <li><a href="Contact.html">Contact</a></li>
             </ul>
         </nav>
         <div class="LOGIN_WINKEL">
@@ -36,22 +53,22 @@
         <h1>Keyboard Shop</h1>
             <h2>De enige echte!</h2>
                 </div>
-            
+<? if ($login = false): ?>
          <div class="PopUp">
                <div class="PopUp-content">
                    <img src="https://www.freeiconspng.com/uploads/white-close-button-png-16.png" alt="Close" class="close_login">
-                        
                    <form action="login.php" method="post">
                             <div class="logo_login">
                                 <h1>Keyboard Shop</h1>
                             </div>
-                                <input type="text" name="username"placeholder="Username">    
-                                <input type="password" name="password" placeholder="Password">
-                            <a href="#" class="btnLogin">Login</a>
+                              <input type="text" name="username"placeholder="Username">    
+                              <input type="password" name="password" placeholder="Password">
+              								<a class= "Login" id="Login" href="#"><button type="submit">Login</button></a>
                             <a href="Registreer.html" class="btnLogin">Registreer</a>
                         </form>
                 </div>
             </div>
+		<? endif; ?>
     </main>
      <script type="text/javascript" src="js/login.js"></script>  
 </body>
