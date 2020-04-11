@@ -4,16 +4,14 @@ session_start();
 
 if ($_SESSION['loggedOn'] == true)
 {
-	echo $_SESSION['loginAccepted'] ,'', $_SESSION['naam'];
+	echo $_SESSION['loginAccepted'] ,' ', $_SESSION['naam'];
+	$login = $SESSION['loggedOn'];
 } 
 else 
 {
 	echo $_SESSION['loginError'];
 	session_destroy();
 } 
-
-
-
 ?>
 <!doctype html>
 
@@ -33,42 +31,29 @@ else
 
 <body onload="LoginCall()">
     <header>
-        <h1 class="logo">Keyboard Shop</h1>
-        <nav>
-            <ul class="nav_links">
-                <li><a href="index.php" class="ActivePage">Home</a></li>
-                <li><a href="Producten.html">Producten</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="LOGIN_WINKEL">
-            <a  class="Winkelmandje" href="#"><button>Winkelmandje</button> </a>     
-              <a class= "Login" id="Login" href="#"><button>Login</button></a>
-			  <a class="Login" id="Login" href="Registreer.html"><button>Registreer</button></a>
-                </div>
-         
+		<?php 
+	if ($_SESSION['loggedOn'] == true)
+	{
+		include 'templates/navigatie.php';	
+	} 
+	else {
+		include 'templates/navigatieLogin.php';
+	} 
+		?>
     </header>
+
     <main>
         <div class="Main_title">
         <h1>Keyboard Shop</h1>
             <h2>De enige echte!</h2>
                 </div>
-<? if ($login = false): ?>
-         <div class="PopUp">
-               <div class="PopUp-content">
-                   <img src="https://www.freeiconspng.com/uploads/white-close-button-png-16.png" alt="Close" class="close_login">
-                   <form action="login.php" method="post">
-                            <div class="logo_login">
-                                <h1>Keyboard Shop</h1>
-                            </div>
-                              <input type="text" name="username"placeholder="Username">    
-                              <input type="password" name="password" placeholder="Password">
-              								<a class= "Login" id="Login" href="#"><button type="submit">Login</button></a>
-                            <a href="Registreer.html" class="btnLogin">Registreer</a>
-                        </form>
-                </div>
-            </div>
-		<? endif; ?>
+								<?php
+								// Hide login/register popup when logged in.
+								if ($_SESSION['loggedOn'] == false)
+								{
+								include 'templates/popUp.php';
+								} 
+								?>
     </main>
      <script type="text/javascript" src="js/login.js"></script>  
 </body>
