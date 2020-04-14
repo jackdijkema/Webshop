@@ -32,7 +32,7 @@ require_once 'database.php';
 	} 
 	else {
 	
-	$_SESSION['loginError'] = 'Login information incorrect, try again!';
+	$_SESSION['loginError'] = '* Login information incorrect, try again!';
 		
 	$_SESSION['loggedOn'] = false;
 

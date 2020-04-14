@@ -1,20 +1,7 @@
 <?php
-
 session_start();
-
-if ($_SESSION['loggedOn'] == true)
-{
-	echo $_SESSION['loginAccepted'] ,' ', $_SESSION['naam'];
-	$login = $SESSION['loggedOn'];
-} 
-else 
-{
-	echo $_SESSION['loginError'];
-	session_destroy();
-} 
 ?>
 <!doctype html>
-
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -41,19 +28,19 @@ else
 	} 
 		?>
     </header>
-
     <main>
-        <div class="Main_title">
-        <h1>Keyboard Shop</h1>
-            <h2>De enige echte!</h2>
-                </div>
-								<?php
-								// Hide login/register popup when logged in.
-								if ($_SESSION['loggedOn'] == false)
-								{
-								include 'templates/popUp.php';
-								} 
-								?>
+					<?php
+						// Hide login/register popup when logged in.
+						if ($_SESSION['loggedOn'] == false)
+						{
+							include 'templates/main_titleLogin.php';
+							include 'templates/popUp.php';
+						} 
+						else 
+						{
+							include 'templates/main_title.php';
+						} 
+					?>
     </main>
      <script type="text/javascript" src="js/login.js"></script>  
 </body>
