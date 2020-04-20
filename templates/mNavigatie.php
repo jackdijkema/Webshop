@@ -4,6 +4,7 @@
                 <li><a href="index.php" class="ActivePage">Home</a></li>
                 <li><a href="products.php">Products</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                <li><a style="color: yellow" href="controlPanel.php">Edit site</a></li>
             </ul>
         </nav>
         <div class="LOGIN_WINKEL">

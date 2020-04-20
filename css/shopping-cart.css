@@ -1,0 +1,14 @@
+* {
+padding: 0;
+margin: 0;
+} 
+
+
+.products {
+	box-sizing: ;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+} 
+

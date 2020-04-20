@@ -21,7 +21,12 @@ session_start();
 	<header>
 		<?php
 		if ($_SESSION['loggedOn'] == true) {
-			include 'templates/navigatie.php';
+			if ($_SESSION['medewerker'] == true) {
+
+				include 'templates/mNavigatie.php';
+			} else {
+				include 'templates/navigatie.php';
+			}
 		} else {
 			include 'templates/navigatieLogin.php';
 		}
@@ -30,12 +35,18 @@ session_start();
 	<main>
 		<?php
 		// Hide login/register popup when logged in.
-		if ($_SESSION['loggedOn'] == false) {
+		if ($_SESSION['loggedOn'] == true) {
+			if ($_SESSION['medewerker'] == true) {
+				include 'templates/mMain_title.php';
+			} else {
+				include 'templates/main_title.php';
+			}
+		} else {
+
 			include 'templates/main_titleLogin.php';
 			include 'templates/popUp.php';
-		} else {
-			include 'templates/main_title.php';
 		}
+
 		?>
 	</main>
 	<script type="text/javascript" src="js/login.js"></script>

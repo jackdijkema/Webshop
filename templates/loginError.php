@@ -1,1 +1,1 @@
-<p style="color:red"> <?php $_SESSION['loginError']; ?></p> 
+<p style="color:red"> <?php $_SESSION['loginError']; ?></p>

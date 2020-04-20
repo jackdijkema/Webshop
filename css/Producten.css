@@ -1,9 +1,16 @@
 * {
     padding: 0;
     margin: 0;
-    
 }
-
-main {
-    background-color: gray;
-}
+.products {
+	display:flex;
+	flex-direction: row;
+	box-sizing:border-box ;
+	justify-content: center;
+	flex-wrap: wrap;
+	padding: 2%;
+	align-content:space-evenly;	
+} 
+.card {
+	flex-grow: 1;
+} 

@@ -5,8 +5,9 @@ require_once 'database.php';
 $query = "SELECT * FROM Producten";
 $result = $conn->query($query);
 
-?>
+$cart = $_SESSION['cart'];
 
+?>
 <html lang="en">
 
 <head>
@@ -14,7 +15,7 @@ $result = $conn->query($query);
   <title>Keyboard Webshop - Products</title>
   <link rel="stylesheet" href="css/header.css">
   <link rel="stylesheet" href="css/login.css">
-  <link rel="stylesheet" href="css/Producten.css">
+  <link rel="stylesheet" href="css/shopping-cart.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -42,33 +43,34 @@ $result = $conn->query($query);
     <section class="products">
 
       <?php
-      if ($result->num_rows > 0) {
-        while ($rij = $result->fetch_assoc()) {
+      //Remove all products button
+      echo '<a href="removeAllCart.php"><button>Remove all products</button></a>';
 
-          $id = $rij['id'];
-          $product = $rij['naam'];
-          $omschrijving = $rij['omschrijving'];
-          $prijs = $rij['prijs'];
-          $filename = $rij['filename'];
 
-          echo '<div class="card">';
-          echo '<div class="product-info">';
-          echo '<img src="img/' . $filename . ' "alt="Keyboard">';
-          echo '</div>';
-          echo '<div class="product-info">';
-          echo '<h1>' . $product . '</h1>';
-          echo '<h2>' . $omschrijving . '</h2>';
-          echo '<h3>€ ' . $prijs . '</h3>';
-          echo '<a href="AddToCart.php?id=' . $id . '"> <button>Add to cart</button></a>';
-          echo '</div>';
-          echo '</div>';
-        }
-      } else {
-        echo '<h1>Geen producten gevonden.</h1>';
+      // $prod = product id
+      foreach ($cart as $prod) {
+
+        $query = "SELECT *  FROM Producten WHERE id=" . $prod . "";
+        $result = $conn->query($query);
+        $result = mysqli_fetch_array($result);
+
+        $price = $result['prijs'];
+        $total += $price;
+				
+        echo '<div class="card">';
+        echo '<div class="product-info">';
+        echo '<img src="img/' . $result['filename'] . ' "alt="Keyboard">';
+        echo '</div>';
+        echo '<div class="product-info">';
+        echo '<h1>' . $result['naam'] . '</h1>';
+        echo '<h2>' . $result['omschrijving'] . '</h2>';
+        echo '<h3>€ ' . $result['prijs'] . '</h3>';
+        echo '</div>';
+        echo '</div>';
       }
+
+      echo '<h1>Total price: ' . $total . '</h1>';
       ?>
-
-
     </section>
 
   </main>

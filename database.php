@@ -1,7 +1,5 @@
 <?php
 //Database
-
-
 // Making connection to database.
 
 $host = "localhost";
