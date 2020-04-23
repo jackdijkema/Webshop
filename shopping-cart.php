@@ -45,18 +45,20 @@ $cart = $_SESSION['cart'];
       <?php
       //Remove all products button
       echo '<a href="removeAllCart.php"><button>Remove all products</button></a>';
+      if ($_SESSION['loggedOn'] == true) {
+        echo '<a href="order.php"><button>Order all</button></a>';
+      }
 
 
-      // $prod = product id
-      foreach ($cart as $prod) {
+      foreach ($cart as $product) {
 
-        $query = "SELECT *  FROM Producten WHERE id=" . $prod . "";
+        $query = "SELECT *  FROM Producten WHERE id=" . $product . "";
         $result = $conn->query($query);
         $result = mysqli_fetch_array($result);
 
         $price = $result['prijs'];
         $total += $price;
-				
+
         echo '<div class="card">';
         echo '<div class="product-info">';
         echo '<img src="img/' . $result['filename'] . ' "alt="Keyboard">';

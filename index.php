@@ -7,6 +7,7 @@ session_start();
 <head>
 	<meta charset="utf-8">
 	<title>Keyboard Webshop - Homepage</title>
+	<script src="https://kit.fontawesome.com/bf381bbffb.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/login.css">
