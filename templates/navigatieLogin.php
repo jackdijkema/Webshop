@@ -7,7 +7,6 @@
       	    </ul>
       	</nav>
       	<div class="LOGIN_WINKEL">
-<i class="fas fa-band-aid"></i>
       	    <a class="Winkelmandje" href="shopping-cart.php"><button><i class="fas fa-shopping-cart"></i></button> </a>
       	    <a class="Login" id="Login" href="#"><button type="submit">Login</button></a>
       	    <a class="Login" id="Login" href="Registreer.html"><button>Register</button></a>
