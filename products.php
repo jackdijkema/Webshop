@@ -25,12 +25,18 @@ $result = $conn->query($query);
 <body onload="LoginCall()">
   <header>
     <?php
-    if ($_SESSION['loggedOn'] == true) {
-      include 'templates/navigatie.php';
-    } else {
-      include 'templates/navigatieLogin.php';
-    }
-    ?>
+
+      if ($_SESSION['loggedOn'] == true) {
+        if ($_SESSION['medewerker'] == true) {
+  
+          include 'templates/mNavigatie.php';
+        } else {
+          include 'templates/navigatie.php';
+        }
+      } else {
+        include 'templates/navigatieLogin.php';
+      }
+      ?>
   </header>
   <main>
     <?php
