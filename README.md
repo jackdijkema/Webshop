@@ -1,4 +1,4 @@
-# Simple procedural php webshop (Inclomplete)
+# Simple procedural php webshop (Incomplete)
 School project making a webshop with procedural PHP | first school project
 
 ### Todo's
